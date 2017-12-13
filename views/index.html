@@ -4,9 +4,26 @@
 <head>
     <title>User Login and Sessions</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fb-page").attr('data-href',encodeURIComponent(""));
+    })
+  </script>
+
+
     <div ng-controller="myController">
         <h2 id="welcomeText">Welcome. You are Logged In as
             <%= username %>
@@ -25,13 +42,22 @@
     Color
         <%= color %>
       </span>
+      <span id="facebookText">
+      Facebook
+          <%= username %>
+        </span>
+
+
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="/javascripts/my_app.js"></script>
 
     <!-- repeat for all users -->
 
+
+
     <h3>Username</h3>
-    <span>embed1 </span><span>embed2 </span><span>embed3 </span>
+    <span><span><div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div> </span><span>embed2 </span><span>embed3 </span> </span><span>embed2 </span><span>embed3 </span>
+
 </body>
 
 </html>

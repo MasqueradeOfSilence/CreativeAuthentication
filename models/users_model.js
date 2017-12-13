@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema({
     username: { type: String, unique: true },
     email: String,
+    facebook: String,
     color: String,
     hashed_password: String
 });
