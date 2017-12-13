@@ -12,6 +12,7 @@ router.get('/', function(req, res){
       console.log("/ Route if user");
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
+                           facebook:req.session.facebook,
                            color:req.session.color});
     } else {
       console.log("/ Route else user");
