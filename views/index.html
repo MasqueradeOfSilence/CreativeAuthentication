@@ -7,15 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <script type="text/javascript">
-  var fb = document.getElementById("facebookText").innerHTML;
-  console.log(fb);
-  $(".fb-page").attr('data-href',encodeURIComponent(fb));
-  $(".fb-xfbml-parse-ignore").attr('cite',encodeURIComponent(fb));
-  $(".not-a-class").attr('href',encodeURIComponent(fb));
-  console.log("Here");
-
     $(document).ready(function() {
+      var fb = document.getElementById("facebookText").innerHTML;
+      var str = "https://www.facebook.com/" + fb;
+      console.log(fb);
+      $(".fb-page").attr('data-href',encodeURIComponent(fb));
+      //$(".fb-xfbml-parse-ignore").attr('cite',encodeURIComponent(fb));
+      //$(".not-a-class").attr('href',encodeURIComponent(fb));
+      console.log("Here");
 
+      FB.XFBML.parse();
     });
   </script>
 </head>
@@ -37,7 +38,7 @@
         </h2>
         <a id="logoutLink" href="/logout">logout</a>
         <a id="editLink" href="/user">Edit User</a>
-        <p>Place Your Code Here
+        <p>
             <p>
     </div>
     <hr>
@@ -45,11 +46,8 @@
         <%= msg %>
     </span>
     <hr>
-    <span id="colorText">
-    Color
-        <%= color %>
-      </span>
-      <div id="facebookText"><%= facebook %></div>
+
+      Facebook username: <div id="facebookText"><%= facebook %></div>
 
 
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
@@ -59,8 +57,8 @@
 
 
 
-    <h3>Username</h3>
-    <span><span><div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a class="not-a-class" href="https://www.facebook.com/facebook">Facebook</a></blockquote></div> </span><span>embed2 </span><span>embed3 </span> </span><span>embed2 </span><span>embed3 </span>
+    <h3>Facebook feed:</h3>
+    <span><div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a class="not-a-class" href="https://www.facebook.com/facebook">Facebook</a></blockquote></div> </span>
 
 </body>
 
